@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagina de em breve</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="css/img/Logo.png" class="logo">
+    </div>
+    <div class="content">
+        <p>Website sobre manutenção</p>
+        <h1>Estaremos <span>diponiveis</span>em breve</h1>
+        <div class="lançamento">
+            <div>
+                <p id="dias">00</p>
+                <span>dias</span>
+            </div>
+            <div>
+                <p id="horas">00</p>
+                <span>horas</span>
+            </div>
+            <div>
+                <p id="minutos">00</p>
+                <span>minutos</span>
+            </div>
+            <div>
+                <p id="segundos">00</p>
+                <span>segundos</span>
+            </div>
+        </div>
+        <button type="button">saiba mais<img src="css/img/triangulo.png"></button>
+        <img src="css/img/foquete.png" class="foquete">
+    </div>
+    <script>
+        var CountDownDate = new Date("oct 30,2025 00:00:00").getTime();
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = CountDownDate - now;
+
+            var dias = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var horas = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutos = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var segundos = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerHTML = dias;
+            document.getElementById("horas").innerHTML = horas;
+            document.getElementById("minutos").innerHTML = minutos;
+            document.getElementById("segundos").innerHTML = segundos;
+
+        }, 1000);
+    </script>
+</body>
+
+</html>
